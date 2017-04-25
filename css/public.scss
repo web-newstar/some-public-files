@@ -66,3 +66,15 @@
         background-size:contain;
     }
 }
+
+//flex布局
+@mixin display-flex{
+    display:flex;
+    display:-webkit-flex;
+    display: -ms-flex;
+}
+@mixin flex($num){
+    flex:$num;
+    -ms-flex:$num;
+    -webkit-flex:$num;
+}
