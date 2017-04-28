@@ -1,0 +1,80 @@
+//水平垂直居中(父元素有定位属性);
+@mixin center(){
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    margin:auto;
+}
+//水平居中(父元素有定位属性);
+@mixin lr(){
+    position:absolute;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+//垂直居中(父元素有定位属性);
+@mixin tb(){
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto 0;
+}
+
+//矩形
+@mixin rect($width,$height){
+    width:$width;
+    height:$height;
+}
+//正方形
+@mixin square($size){
+    width:$size;
+    height:$size;
+}
+//圆角封装
+@mixin border-radius($size){
+    border-radius:$size;
+	-webkit-border-radius:$size;
+	-moz-border-radius:$size;
+}
+//box-sizing
+@mixin box-sizing(){
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:border-box; 
+}
+
+//动画效果(平移)
+@mixin transForm($num1,$num2,$num3){
+	-webkit-transform: translate3d($num1,$num2,$num3);
+	-moz-transform: translate3d($num1,$num2,$num3);
+	-ms-transform: translate3d($num1,$num2,$num3);
+	-o-transform: translate3d($num1,$num2,$num3);
+	transform: translate3d($num1,$num2,$num3);
+}
+//动画效果(旋转)
+//背景图片水平居中无重复
+@mixin background-img($url,$cover){
+    background-image: url($url);
+    background-position:center center;
+    background-repeat: no-repeat;
+    @if $cover=="cover"{
+         background-size: cover;
+    }
+    @if $cover=="contain"{
+        background-size:contain;
+    }
+}
+
+//flex布局
+@mixin display-flex{
+    display:flex;
+    display:-webkit-flex;
+    display: -ms-flex;
+}
+@mixin flex($num){
+    flex:$num;
+    -ms-flex:$num;
+    -webkit-flex:$num;
+}
