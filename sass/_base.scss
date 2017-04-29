@@ -1,4 +1,63 @@
 //初始化标签
 html{font-size:100px}
+body{font-size:14px}
 body,p,form,input,button,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6{margin:0;padding:0;list-style:none;}
 a{outline:0;cursor:pointer;text-decoration:none;color:#333;}
+
+////////////////////////////////////12栅格系统/////////////////////////////////
+.row{
+    overflow:hidden;
+    ::after{
+        content:"";
+        clear:both;
+        display: block;
+    }
+}
+%float{
+    float:left;
+};
+$break-points:(
+    "xs":0,
+    "sm":750px,
+    "md":970px,
+    "lg":1170px
+);
+$size:12 !default;
+@each $key in map_keys($break-points){
+    @for $i from 1 through $size{
+        .col-#{$key}-#{$i}{
+            @extend %float;
+            
+        }
+    }
+    $s:map_get($break-points,$key);
+    @if($s==0){
+        @for $i from 1 through $size{
+            .col-#{$key}-#{$i}{
+                width:percentage($i/$size);
+            }
+        }
+    }@else{
+        @media screen and (min-width:$s){
+            @for $i from 1 through $size{
+                .col-#{$key}-#{$i}{
+                    width:percentage($i/$size);
+                }
+            }
+        }
+    }
+}
+///////////////////////////////bootstrap///////////////////////////
+.row{
+    overflow:hidden;
+};
+%float{
+    float:left;
+}
+$col:12 !default;
+@for $i from 1 through $col{
+    .col-#{$i}{
+        width:percentage($i/$col);
+        @extend %float;
+    }
+}  

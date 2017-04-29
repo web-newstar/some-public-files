@@ -44,7 +44,7 @@
     -webkit-box-sizing: border-box;
     box-sizing:border-box; 
 }
-
+//////////////////////////////关于动画效果的////////////////////////////////////
 //动画效果(平移)
 @mixin transForm($num1,$num2,$num3){
 	-webkit-transform: translate3d($num1,$num2,$num3);
@@ -53,7 +53,9 @@
 	-o-transform: translate3d($num1,$num2,$num3);
 	transform: translate3d($num1,$num2,$num3);
 }
-//动画效果(旋转)
+
+
+////////////////////////////关于背景////////////////////////////////////////////
 //背景图片水平居中无重复
 @mixin background-img($url,$cover){
     background-image: url($url);
@@ -66,8 +68,19 @@
         background-size:contain;
     }
 }
+@function randomColor(){
+    $red:random(255);
+    $blue:random(255);
+    $green:random(255);
+    $opacity:random();
+    @return rgba($red,$blue,$green,$opacity);
+}
+@mixin bg-color(){
+    background:randomColor();
+}
 
-//flex布局
+/////////////////////////////////关于布局方面的////////////////////////////////////
+//  1    flex布局
 @mixin display-flex{
     display:flex;
     display:-webkit-flex;
@@ -78,3 +91,10 @@
     -ms-flex:$num;
     -webkit-flex:$num;
 }
+// 2     利用伪类清除浮动
+@mixin clear-float(){
+    content:"";
+    clear:both;
+    display:block;
+}
+//
