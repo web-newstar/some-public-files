@@ -12,5 +12,5 @@
     doc.addEventListener('DOMContentLoaded', recalc, false)
 })(document, window);
 window.onload=function(){
-
+    
 }

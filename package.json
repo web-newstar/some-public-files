@@ -1,0 +1,25 @@
+{
+  "name": "some-public-files",
+  "version": "1.0.0",
+  "description": "直接运行start.cmd文件 启动自动测试工具(browsersync)\r ---------------\r [--browsersync的安装和使用方法](http://www.browsersync.cn/)\r ------\r   默认读取的是index.html文件\r - 如果不是index.html 请修改\r - 文件中的有很多scss文件,需要sass编译\r - 如果是移动端,css中尽量使用rem",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-newstar/some-public-files.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/web-newstar/some-public-files/issues"
+  },
+  "homepage": "https://github.com/web-newstar/some-public-files#readme",
+  "dependencies": {
+    "titanic-icons": "^1.2.0"
+  }
+}

@@ -6,3 +6,5 @@
 - 如果不是index.html 请修改
 - 文件中的有很多scss文件,需要sass编译
 - 如果是移动端,css中尽量使用rem
+
+新增mobileSelect
